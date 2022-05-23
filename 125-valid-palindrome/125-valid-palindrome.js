@@ -28,8 +28,5 @@ var isPalindrome = function(s) {
             backwardString += s[reverseIndex].toLowerCase();
         }
     }
-    if (forwardString === backwardString) {
-        return true;
-    }
-    return false;
+    return forwardString === backwardString;
 };
