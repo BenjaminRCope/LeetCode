@@ -16,13 +16,7 @@ const isAlphaNumeric = (str) => {
   return true;
 };
 
-var isPalindrome = function(s) {
-//     I - string
-//     O - boolean
-//     C - 1 <= s.length <= 2*10^5
-//          s consists of only printable ASCII characters
-//     E - non-alphanumeric characters
-    
+var isPalindrome = function(s) {   
     let forwardString = '', backwardString = '';
     
     for (let i = 0; i < s.length; i+=1) {
@@ -34,8 +28,6 @@ var isPalindrome = function(s) {
             backwardString += s[reverseIndex].toLowerCase();
         }
     }
-    // console.log(forwardString);
-    // console.log(backwardString);
     if (forwardString === backwardString) {
         return true;
     }
