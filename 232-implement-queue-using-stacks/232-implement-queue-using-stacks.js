@@ -1,7 +1,5 @@
 
 var MyQueue = function() {
-//     the queue needs a head and a length
-//     a queue node needs a number and a next
     this.stack1 = [];
     this.stack2 = [];
 };
@@ -18,13 +16,13 @@ MyQueue.prototype.push = function(x) {
  * @return {number}
  */
 MyQueue.prototype.pop = function() {
-    while (this.stack1[0]) {
+    while (this.stack1.length !== 0) {
         this.stack2.push(this.stack1.pop());
     }
     
     let firstValue = this.stack2.pop();
     
-    while (this.stack2[0]) {
+    while (this.stack2.length !== 0) {
         this.stack1.push(this.stack2.pop());
     }
     
@@ -35,14 +33,14 @@ MyQueue.prototype.pop = function() {
  * @return {number}
  */
 MyQueue.prototype.peek = function() {
-    while (this.stack1[0]) {
+    while (this.stack1.length !== 0) {
         this.stack2.push(this.stack1.pop());
     }
     
     let firstValue = this.stack2.pop();
     this.stack2.push(firstValue);
     
-    while (this.stack2[0]) {
+    while (this.stack2.length !== 0) {
         this.stack1.push(this.stack2.pop());
     }
     return firstValue;
